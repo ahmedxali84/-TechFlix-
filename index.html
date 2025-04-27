@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFlix | Professional Digital Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #34495e;
+            --accent: #e74c3c;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --text: #333333;
+            --text-light: #7f8c8d;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            padding: 20px 0;
+            position: relative;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(52, 73, 94, 0.2), transparent);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-icon {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        .nav-services {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .verified-badge {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: var(--secondary);
+            background: rgba(52, 152, 219, 0.1);
+            padding: 8px 15px;
+            border-radius: 30px;
+        }
+
+        .check-icon {
+            color: var(--accent);
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        .cta-button {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 2px solid var(--secondary);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(52, 73, 94, 0.2);
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 73, 94, 0.25);
+        }
+
+        .cta-button.outline {
+            background: transparent;
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        .cta-button.outline:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin: 80px 0;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transition: transform 0.5s ease;
+            border: 1px solid rgba(52, 73, 94, 0.1);
+        }
+
+        .hero-image:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Services Section */
+        .services-section {
+            margin: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-description {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .progress-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 75%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        .services-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 25px 25px;
+            width: 220px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            cursor: pointer;
+            z-index: 3;
+            overflow: hidden;
+            border: 1px solid rgba(52, 73, 94, 0.1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: rgba(52, 152, 219, 0.05);
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-number {
+            color: rgb(2, 2, 80, 0.4);
+            transform: scale(1.01);
+        }
+
+        .service-name {
+            font-weight: 600;
+            color: var(--secondary);
+            transition: color 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card:hover .service-name {
+            color: var(--primary);
+        }
+
+        /* Process Section */
+        .process-section {
+            margin: 120px 0;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.03), rgba(231, 76, 60, 0.03));
+            padding: 80px 0;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(52, 152, 219, 0.05);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .process-section::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 250px;
+            height: 250px;
+            background: rgba(231, 76, 60, 0.05);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 160px;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            right: -30px;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            opacity: 0.5;
+            transition: all 0.4s ease;
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .process-step:hover::after {
+            width: 60px;
+            opacity: 1;
+            background: var(--primary);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 2px solid rgba(52, 152, 219, 0.1);
+        }
+
+        .process-step:hover .step-number {
+            transform: scale(1.1);
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover .step-title {
+            color: var(--accent);
+        }
+
+        .step-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Badges Section */
+        .badges-section {
+            margin: 100px 0;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .badge {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            width: 300px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(52, 73, 94, 0.1);
+        }
+
+        .badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .badge-icon {
+            font-size: 40px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .badge h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .badge p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .badge:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            margin: 120px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 80px 40px;
+            border-radius: 20px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 50%;
+        }
+
+        .cta-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-description {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin: 100px 0;
+            padding: 80px 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .team-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid rgba(52, 73, 94, 0.1);
+            position: relative;
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member:hover::before {
+            opacity: 1;
+        }
+
+        .member-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 30px;
+        }
+
+        .member-info h3 {
+            color: var(--secondary);
+            margin-bottom: 5px;
+            font-size: 1.4rem;
+        }
+
+        .member-info h3 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .member-info h3 a:hover {
+            color: var(--primary);
+        }
+
+        .role {
+            color: var(--primary);
+            font-weight: 600;
+            margin: 10px 0;
+            font-size: 0.95rem;
+        }
+
+        .bio {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--secondary);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            background: rgba(52, 73, 94, 0.05);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 0 30px;
+            background: var(--secondary);
+            color: var(--white);
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .footer-logo-icon {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 28px;
+        }
+
+        .footer-description {
+            opacity: 0.7;
+            max-width: 300px;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 60px;
+        }
+
+        .footer-links h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .hero-cta {
+                justify-content: center;
+            }
+            
+            .process-step::after {
+                display: none;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            
+            .process-step {
+                max-width: 400px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-links {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .nav-services {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .progress-line {
+                display: none;
+            }
+            
+            .services-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .service-card {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-code logo-icon"></i>
+                TechFlix 
+            </div>
+            <div class="nav-services">
+                <div class="verified-badge">
+                    <i class="fas fa-check-circle check-icon"></i>
+                    Google Certified Partner
+                </div>
+                <a href="tel:03182715442" class="cta-button">
+                    <i class="fas fa-phone-alt"></i> Get Consultation
+                </a>
+            </div>
+        </header>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Transform Your <span>Digital Presence</span></h1>
+                <h2>Professional Web & Mobile Solutions to Boost Your Business Growth</h2>
+                
+                <p class="description">
+                    Our data-driven approach to digital transformation combines technical expertise with innovative strategies to deliver measurable results.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="#services" class="cta-button">
+                        <i class="fas fa-laptop-code"></i> Our Services
+                    </a>
+                    <a href="mailto:codifyx100@gmail.com" class="cta-button outline">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Digital Solutions">
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="section-header">
+                <div class="section-subtitle">Our Expertise</div>
+                <h2 class="section-title">Comprehensive Digital Solutions</h2>
+                <p class="section-description">
+                    We offer end-to-end digital services tailored to your business objectives and market position.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="progress-line"></div>
+                
+                <div class="services-row">
+                    <div class="service-card">
+                        <div class="service-number">1</div>
+                        <div class="service-name">Web Development</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-number">2</div>
+                        <div class="service-name">Mobile Apps</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-number">3</div>
+                        <div class="service-name">UI/UX Design</div>
+                    </div>
+                </div>
+                
+                <div class="services-row">
+                    <div class="service-card">
+                        <div class="service-number">4</div>
+                        <div class="service-name">E-commerce</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-number">5</div>
+                        <div class="service-name">Digital Marketing</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-number">6</div>
+                        <div class="service-name">Cloud Solutions</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-number">7</div>
+                        <div class="service-name">SEO Optimization</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-subtitle">Meet Our Experts</div>
+                    <h2 class="section-title">Professional Team</h2>
+                    <p class="section-description">
+                        Our talented team combines technical expertise with creative vision to deliver exceptional results.
+                    </p>
+                </div>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Ahmed Ali">
+                        </div>
+                        <div class="member-info">
+                            <h3><a href="https://portfolio3-kohl.vercel.app/">Ahmed Ali</a></h3>
+                            <p class="role">CEO | Full-Stack Developer</p>
+                            <p class="bio">Expert in MERN stack with years of experience leading technical teams and delivering enterprise solutions.</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Maria Aftab">
+                        </div>
+                        <div class="member-info">
+                            <h3><a href="https://maria-portfolio-two.vercel.app/">Maria Aftab</a></h3>
+                            <p class="role">Digital Marketing Head</p>
+                            <p class="bio">SEO and social media expert with proven track record in brand growth and online engagement strategies.</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-subtitle">Our Methodology</div>
+                    <h2 class="section-title">Proven Development Process</h2>
+                    <p class="section-description">
+                        Our systematic approach ensures high-quality digital products and continuous optimization.
+                    </p>
+                </div>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h4 class="step-title">Discovery</h4>
+                        <p class="step-description">Understanding your business goals and technical requirements</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h4 class="step-title">Planning</h4>
+                        <p class="step-description">Creating detailed project roadmap and architecture</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h4 class="step-title">Design</h4>
+                        <p class="step-description">Crafting intuitive user interfaces and experiences</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h4 class="step-title">Development</h4>
+                        <p class="step-description">Building robust and scalable digital solutions</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h4 class="step-title">Launch</h4>
+                        <p class="step-description">Deploying and optimizing your digital product</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Badges Section -->
+        <section class="badges-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-subtitle">Our Credentials</div>
+                    <h2 class="section-title">Technology Excellence</h2>
+                    <p class="section-description">
+                        Recognized expertise in digital transformation with proven results across multiple industries.
+                    </p>
+                </div>
+                
+                <div class="badges">
+                    <div class="badge">
+                        <i class="fas fa-check-circle badge-icon"></i>
+                        <h3>Web Development</h3>
+                        <p>Certified Web Solutions Provider</p>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-check-circle badge-icon"></i>
+                        <h3>App Development</h3>
+                        <p>Cross & Non Cross Platforms</p>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-check-circle badge-icon"></i>
+                        <h3>Graphic Designer</h3>
+                        <p>Provide User Friendly Designs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="consultation" class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">Ready to Transform Your Digital Presence?</h2>
+                <p class="cta-description">
+                    Schedule a free consultation with our digital specialists to discuss how we can help grow your business.
+                </p>
+                <a href="tel:03182715442" class="cta-button">
+                    <i class="fas fa-calendar-alt"></i> Book Free Consultation
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-code footer-logo-icon"></i>
+                        TechFlix
+                    </div>
+                    <p class="footer-description">
+                        Professional digital solutions provider helping businesses maximize their potential in the digital world.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Mobile Applications</a></li>
+                            <li><a href="#">UI/UX Design</a></li>
+                            <li><a href="#">Digital Marketing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="./aboutUs.html">About Us</a></li>
+                            <li><a href="#">Our Process</a></li>
+                            <li><a href="./CaseStudies.html">Case Studies</a></li>
+                            <li><a href="./ContactUS.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Guides</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Webinars</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechFlix . All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation for service cards on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const serviceCards = document.querySelectorAll('.service-card');
+        const processSteps = document.querySelectorAll('.process-step');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        serviceCards.forEach((card, index) => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+
+        processSteps.forEach((step, index) => {
+            step.style.opacity = 0;
+            step.style.transform = 'translateY(20px)';
+            step.style.transition = `all 0.5s ease ${index * 0.1}s`;
+            observer.observe(step);
+        });
+    </script>
+</body>
+</html>

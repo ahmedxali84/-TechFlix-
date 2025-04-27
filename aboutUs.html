@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | TechFlix Professional Digital Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reusing your existing CSS variables and base styles */
+        :root {
+            --primary: #3498db;
+            --secondary: #34495e;
+            --accent: #e74c3c;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --text: #333333;
+            --text-light: #7f8c8d;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header - Same as your main site */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            position: relative;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(52, 73, 94, 0.2), transparent);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-icon {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        .nav-services {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .verified-badge {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: var(--secondary);
+            background: rgba(52, 152, 219, 0.1);
+            padding: 8px 15px;
+            border-radius: 30px;
+        }
+
+        .check-icon {
+            color: var(--accent);
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        .cta-button {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 2px solid var(--secondary);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(52, 73, 94, 0.2);
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 73, 94, 0.25);
+        }
+
+        .cta-button.outline {
+            background: transparent;
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        .cta-button.outline:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        /* About Hero Section */
+        .about-hero {
+            text-align: center;
+            margin: 60px 0;
+            position: relative;
+        }
+
+        .about-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .about-hero h1 span {
+            color: var(--accent);
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* About Content */
+        .about-content {
+            display: flex;
+            gap: 60px;
+            margin: 80px 0;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transition: transform 0.5s ease;
+            border: 1px solid rgba(52, 73, 94, 0.1);
+        }
+
+        .about-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .mission-values {
+            margin: 100px 0;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.03), rgba(231, 76, 60, 0.03));
+            padding: 80px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-values::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(52, 152, 219, 0.05);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .mission-values::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 250px;
+            height: 250px;
+            background: rgba(231, 76, 60, 0.05);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .mv-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(52, 73, 94, 0.1);
+        }
+
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .mv-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .mv-card h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .mv-card h3 i {
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+
+        .mv-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Team Preview */
+        .team-preview {
+            margin: 100px 0;
+            text-align: center;
+        }
+
+        .team-preview h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .team-cta {
+            margin-top: 40px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            margin: 100px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 80px 40px;
+            border-radius: 20px;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 0 30px;
+            background: var(--secondary);
+            color: var(--white);
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .footer-logo-icon {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 28px;
+        }
+
+        .footer-description {
+            opacity: 0.7;
+            max-width: 300px;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 60px;
+        }
+
+        .footer-links h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .about-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .about-image {
+                max-width: 600px;
+                width: 100%;
+            }
+            
+            .mission-values {
+                padding: 60px 30px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-links {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .nav-services {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-hero p {
+                font-size: 1rem;
+            }
+            
+            .about-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .stat-item h3 {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-code logo-icon"></i>
+                <a href="./index.html" style="color:  var(--secondary); text-decoration: none;">TechFlix</a> 
+            </div>
+            <div class="nav-services">
+                <div class="verified-badge">
+                    <i class="fas fa-check-circle check-icon"></i>
+                    Google Certified Partner
+                </div>
+                <a href="tel:03182715442" class="cta-button">
+                    <i class="fas fa-phone-alt"></i> Get Consultation
+                </a>
+            </div>
+        </header>
+
+        <section class="about-hero">
+            <h1>About <span>TechFlix</span></h1>
+            <p>Driving digital transformation through innovative technology solutions tailored to your business needs.</p>
+        </section>
+
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Who We Are</h2>
+                <p>TechFlix is a premier digital solutions provider founded in 2020 with a vision to bridge the gap between businesses and cutting-edge technology. Based in Karachi with a global clientele, we specialize in creating digital experiences that drive growth and innovation.</p>
+                
+                <p>Our team of certified developers, designers, and digital strategists work collaboratively to deliver comprehensive solutions that address the unique challenges of modern businesses in an increasingly digital world.</p>
+                
+                <p>What sets us apart is our commitment to understanding your business objectives first, then crafting technology solutions that align perfectly with your goals, rather than taking a one-size-fits-all approach.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="TechFlix Team">
+            </div>
+        </div>
+
+        <section class="mission-values">
+            <div class="about-text" style="text-align: center;">
+                <h2>Our Mission & Values</h2>
+                <p>We believe technology should empower businesses, not complicate them. Our core values guide everything we do.</p>
+            </div>
+            
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                    <p>To democratize access to premium digital solutions, enabling businesses of all sizes to compete effectively in the digital economy through affordable, scalable technology services.</p>
+                </div>
+                
+                <div class="mv-card">
+                    <h3><i class="fas fa-lightbulb"></i> Innovation</h3>
+                    <p>We constantly explore emerging technologies and methodologies to deliver forward-thinking solutions that give our clients a competitive edge.</p>
+                </div>
+                
+                <div class="mv-card">
+                    <h3><i class="fas fa-hands-helping"></i> Partnership</h3>
+                    <p>We view every client relationship as a long-term partnership, invested in your success as much as our own.</p>
+                </div>
+                
+                <div class="mv-card">
+                    <h3><i class="fas fa-chart-line"></i> Results-Driven</h3>
+                    <p>Our focus is always on delivering measurable business outcomes, not just technical deliverables.</p>
+                </div>
+                
+                <div class="mv-card">
+                    <h3><i class="fas fa-user-shield"></i> Integrity</h3>
+                    <p>We maintain transparency in all our dealings and uphold the highest ethical standards in our work.</p>
+                </div>
+                
+                <div class="mv-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Excellence</h3>
+                    <p>We pursue mastery in our craft through continuous learning and quality assurance at every stage.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>150+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>95%</h3>
+                    <p>Client Retention Rate</p>
+                </div>
+                <div class="stat-item">
+                    <h3>12+</h3>
+                    <p>Industry Awards</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Support Availability</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-preview">
+            <h2>Meet Our Expert Team</h2>
+            <p>Behind every great solution is a team of passionate professionals dedicated to your success.</p>
+            <div class="team-cta">
+                <a href="team.html" class="cta-button">
+                    <i class="fas fa-users"></i> View Our Team
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-code footer-logo-icon"></i>
+                        TechFlix
+                    </div>
+                    <p class="footer-description">
+                        Professional digital solutions provider helping businesses maximize their potential in the digital world.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Mobile Applications</a></li>
+                            <li><a href="#">UI/UX Design</a></li>
+                            <li><a href="#">Digital Marketing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="./aboutUs.html">About Us</a></li>
+                            <li><a href="#">Our Process</a></li>
+                            <li><a href="./CaseStudies.html">Case Studies</a></li>
+                            <li><a href="./index.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Guides</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Webinars</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechFlix . All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for stats counting up
+        document.addEventListener('DOMContentLoaded', function() {
+            const statItems = document.querySelectorAll('.stat-item h3');
+            const statsSection = document.querySelector('.stats-section');
+            
+            const animateStats = () => {
+                statItems.forEach(stat => {
+                    const target = parseInt(stat.textContent);
+                    let current = 0;
+                    const increment = target / 30;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            clearInterval(timer);
+                            stat.textContent = stat.textContent; // Reset to original if it has + sign
+                        } else {
+                            stat.textContent = Math.floor(current);
+                        }
+                    }, 30);
+                });
+            };
+            
+            // Only animate when stats section is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateStats();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(statsSection);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
