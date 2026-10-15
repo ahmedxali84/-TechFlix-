@@ -205,7 +205,7 @@ export default function HomePage() {
                             <figcaption className="member-cap">
                                 <span className="mono">CEO — Chief Executive Officer</span>
                                 <h3>Ahmed <em>Ali</em></h3>
-                                <p>MERN-stack specialist with years of experience leading technical teams and delivering enterprise solutions.</p>
+                                <p>AI engineer specialising in machine learning, MLOps, generative AI and agentic AI — taking models from experiment to production and leading TechFlix’s technical direction.</p>
                             </figcaption>
                         </figure>
                         <figure className="member">

@@ -11,7 +11,7 @@ const MEMBERS = [
         role: 'CEO — Chief Executive Officer',
         first: 'Ahmed', last: 'Ali',
         photo: '/assets/team/ahmed.jpg', w: 1600, h: 1600,
-        bio: 'MERN-stack specialist with years of experience leading technical teams and delivering enterprise solutions.',
+        bio: 'AI engineer specialising in machine learning, MLOps, generative AI and agentic AI — taking models from experiment to production and leading TechFlix’s technical direction.',
     },
     {
         role: 'COO — Chief Operating Officer',
