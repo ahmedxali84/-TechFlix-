@@ -16,18 +16,19 @@ const MEMBERS = [
     {
         role: 'COO — Chief Operating Officer',
         first: 'Maria', last: 'Aftab',
-        photo: '/assets/team/maria.jpg', w: 1600, h: 2588,
+        photo: '/assets/team/maria-square.jpg', w: 1600, h: 1600,
         bio: 'SEO and social specialist with a proven record in brand growth and online engagement.',
     },
     {
         role: 'Team Lead — Mafia Games · Co-Lead — KAVAN',
         first: 'Mubashir', last: 'Shabbir',
-        photo: '/assets/team/mubashir.jpg', w: 1600, h: 2133,
+        photo: '/assets/team/mubashir-square.jpg', w: 1600, h: 1600,
         bio: 'Leads the Mafia Games team and co-leads KAVAN, keeping both products moving from plan to release.',
     },
     {
         role: 'Team Lead — KAVAN & One Place Indoor',
         first: 'Saad', last: 'Sajjad',
+        photo: '/assets/team/saad.jpg', w: 1600, h: 1600,
         bio: 'Leads the KAVAN and One Place Indoor teams, owning delivery across both ventures.',
     },
 ];

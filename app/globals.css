@@ -411,7 +411,7 @@ em, .serif { font-family: var(--serif); font-style: italic; font-weight: 400; le
     position: relative; overflow: hidden; transform-style: preserve-3d;
     /* Fill the column, but never taller than 70% of the screen; --ar is the photo's width/height */
     width: min(100%, calc(70vh * var(--ar, 0.8)));
-    width: min(100%, calc(70svh * var(--ar, 0.8))); margin-bottom: 24px;
+    width: min(100%, calc(70svh * var(--ar, 0.8))); margin: 0 auto 24px;
     clip-path: polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%);
 }
 .member-img img { width: 100%; height: auto; filter: grayscale(1) contrast(1.05); transition: filter 0.8s var(--ease); }

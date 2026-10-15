@@ -209,8 +209,8 @@ export default function HomePage() {
                             </figcaption>
                         </figure>
                         <figure className="member">
-                            <div className="member-img" style={{ '--ar': 1600 / 2588 }}>
-                                <Image src="/assets/team/maria.jpg" alt="Maria Aftab, COO" width={1600} height={2588} quality={90} sizes="(max-width: 860px) 100vw, 45vw" />
+                            <div className="member-img" style={{ '--ar': 1 }}>
+                                <Image src="/assets/team/maria-square.jpg" alt="Maria Aftab, COO" width={1600} height={1600} quality={90} sizes="(max-width: 860px) 100vw, 45vw" />
                             </div>
                             <figcaption className="member-cap">
                                 <span className="mono">COO — Chief Operating Officer</span>
